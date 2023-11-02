@@ -34,9 +34,9 @@ module.exports.getAllCities = async function (req, res) {
 };
 module.exports.getCityById = async function (req, res) {
   const { params: id } = req;
-
+console.log(id)
   try {
-    const city = await CitySchema.findById(id);
+    const city = await CitySchema.findById(id.id);
     res.json(city);
   } catch (error) {
     return res
@@ -47,8 +47,9 @@ module.exports.getCityById = async function (req, res) {
 
 module.exports.deleteCity = async function (req, res) {
   const { params: cityId } = req;
+  console.log(cityId.id)
   try {
-    const deletedCity = CitySchema.deleteOne(cityId);
+    const deletedCity = await CitySchema.deleteOne({_id: cityId.id}); //findOneAndDelete
     res.json(deletedCity);
   } catch (err) {
     console.error(err);
@@ -61,12 +62,16 @@ module.exports.updateCity = async function (req, res) {
     body: data,
     params: { id },
   } = req;
+  console.log(data, id)
   try {
     const updatedCity = await CitySchema.findOneAndUpdate(
-      { name: data.name }, // Фильтр для поиска страны по названию
-      { $set: { name: data.updatedName } }, // Обновляемые данные
-      { new: true } // Опция new для получения обновленной записи
+      { _id: id}, // Фильтр для поиска страны по названию
+      { $set: { name: data.name } }, // Обновляемые данные
     );
+
+    console.log(updatedCity)
+
+    res.json(updatedCity)
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Error updating city" });

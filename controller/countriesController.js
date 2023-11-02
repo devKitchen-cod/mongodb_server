@@ -44,7 +44,7 @@ module.exports.deleteCountry = async function (req, res) {
   const { params: countryId } = req;
   console.log(countryId)
   try {
-    const deletedCountry =await CountrySchema.findOneAndDelete(countryId.id)
+    const deletedCountry =await CountrySchema.deleteOne({_id: countryId.id})
     //  await CountrySchema.deleteOne( countryId.id);
     res.json(deletedCountry);
   } catch (err) {
