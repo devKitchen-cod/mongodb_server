@@ -1,0 +1,121 @@
+[
+  {
+    "_id": {
+      "$oid": "648894d1b785204e7e603f46"
+    },
+    "name": "Tianjin",
+    "country": {
+      "$oid": "64888491e75463ad14793f1b"
+    },
+    "city_code": "TSN",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d1b785204e7e603f68"
+    },
+    "name": "Rio De Janeiro",
+    "country": {
+      "$oid": "64888491e75463ad14793f1f"
+    },
+    "city_code": "RIO",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d2b785204e7e604034"
+    },
+    "name": "Sana'a",
+    "country": {
+      "$oid": "64888491e75463ad14793f23"
+    },
+    "city_code": "SAH",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d2b785204e7e604080"
+    },
+    "name": "Philadelphia",
+    "country": {
+      "$oid": "64888491e75463ad14793f21"
+    },
+    "city_code": "PHL",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d2b785204e7e603fe2"
+    },
+    "name": "Chicago",
+    "country": {
+      "$oid": "64888491e75463ad14793f21"
+    },
+    "city_code": "CHI",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d2b785204e7e603fde"
+    },
+    "name": "Dubai",
+    "country": {
+      "$oid": "64888491e75463ad14793f37"
+    },
+    "city_code": "DXB",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d1b785204e7e603f84"
+    },
+    "name": "Melbourne",
+    "country": {
+      "$oid": "64888491e75463ad14793f3b"
+    },
+    "city_code": "MEL",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d2b785204e7e60401e"
+    },
+    "name": "Brisbane",
+    "country": {
+      "$oid": "64888491e75463ad14793f3b"
+    },
+    "city_code": "BNE",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894d3b785204e7e604108"
+    },
+    "name": "Adelaide",
+    "country": {
+      "$oid": "64888491e75463ad14793f3b"
+    },
+    "city_code": "ADL",
+    "__v": 0
+  },
+
+  {
+    "_id": {
+      "$oid": "648894dab785204e7e6046d0"
+    },
+    "name": "Newcastle",
+    "country": {
+      "$oid": "64888491e75463ad14793f3b"
+    },
+    "city_code": "NTL",
+    "__v": 0
+  }
+]

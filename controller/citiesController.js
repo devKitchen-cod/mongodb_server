@@ -3,12 +3,12 @@ const CitySchema = require("../models/CitySchema");
 module.exports.createCity = async function (req, res) {
   const {
     body: { name: name, city_code: city_code },
-    params: {id}
+    params: { id },
   } = req; // Параметры для создания нового города
   try {
-    console.log(id)
+    console.log(id);
     const findedCountry = await CountrySchema.findById(id);
-    console.log(findedCountry)
+    console.log(findedCountry);
     const createdCity = await CitySchema.create({
       name: name,
       country: findedCountry._id,
@@ -34,9 +34,9 @@ module.exports.getAllCities = async function (req, res) {
 };
 module.exports.getCityById = async function (req, res) {
   const { params: id } = req;
-console.log(id)
+  console.log(id);
   try {
-    const city = await CitySchema.findById(id.id);
+    const city = await CitySchema.findById(id.id).populate("country");
     res.json(city);
   } catch (error) {
     return res
@@ -47,9 +47,9 @@ console.log(id)
 
 module.exports.deleteCity = async function (req, res) {
   const { params: cityId } = req;
-  console.log(cityId.id)
+  console.log(cityId.id);
   try {
-    const deletedCity = await CitySchema.deleteOne({_id: cityId.id}); //findOneAndDelete
+    const deletedCity = await CitySchema.deleteOne({ _id: cityId.id }); //findOneAndDelete
     res.json(deletedCity);
   } catch (err) {
     console.error(err);
@@ -62,16 +62,16 @@ module.exports.updateCity = async function (req, res) {
     body: data,
     params: { id },
   } = req;
-  console.log(data, id)
+  console.log(data, id);
   try {
     const updatedCity = await CitySchema.findOneAndUpdate(
-      { _id: id}, // Фильтр для поиска страны по названию
-      { $set: { name: data.name } }, // Обновляемые данные
+      { _id: id }, // Фильтр для поиска страны по названию
+      { $set: { name: data.name } } // Обновляемые данные
     );
 
-    console.log(updatedCity)
+    console.log(updatedCity);
 
-    res.json(updatedCity)
+    res.json(updatedCity);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Error updating city" });

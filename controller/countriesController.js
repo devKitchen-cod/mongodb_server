@@ -1,7 +1,7 @@
 const CountrySchema = require("../models/CountrySchema");
 
 module.exports.createCountry = async function (req, res) {
-  const { name, country_code } = req.body; // Параметры для создания новой страны
+  const { name, country_code } = req.body; 
   try {
     const newCountry = await CountrySchema.create({
       name: name,

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const TicketModel = new mongoose.Schema({
+const TicketSchema = new mongoose.Schema({
   code: { type: String },
   place_type: {
     type: mongoose.Schema.Types.ObjectId,

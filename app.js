@@ -45,6 +45,7 @@ app.use(function(err, req, res, next) {
 const start = async () => {
   try {
     await mongoose.connect(URI)
+  //  console.log('client', cl)
     console.log("Server is connected to MongoDb")
     app.listen(PORT, () => console.log(`Server started on ${PORT}`))
   } catch (error) {
