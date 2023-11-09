@@ -32,4 +32,10 @@ router.get('/getTicketById/:id', ticket_controller.getTicketById)
 router.delete('/deleteTicket', ticket_controller.deleteTicket)
 
 router.get('/useTransaction', ticket_controller.useTransaction)
+
+const search = require('../controller/searchController')
+router.post('/searchAirport', search.searchAirport)
+router.post('/searchCountry', search.searchCountry)
+router.post('/searchCity', search.searchCity)
+// router.post
 module.exports = router;
